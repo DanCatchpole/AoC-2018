@@ -14,7 +14,7 @@ class Day1 {
 
         fun partB() : Int {
             var currentFreq = 0
-            var prevFreqs: Set<Int> = setOf()
+            var prevFreqs: MutableSet<Int> = mutableSetOf()
             val lines = File("day1.txt").readLines()
             while (true) {
                 for (line in lines) {
@@ -22,7 +22,7 @@ class Day1 {
                     if (prevFreqs.contains(currentFreq)) {
                         return currentFreq
                     }
-                    prevFreqs = prevFreqs.plus(currentFreq)
+                    prevFreqs.add(currentFreq)
                 }
             }
         }
