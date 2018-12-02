@@ -5,14 +5,14 @@ class Day2 {
 
     companion object {
 
-        fun occurences(str : String) : Set<Int> = str.toSet().distinct().map { c -> str.count { it == c } }.toSet()
+        fun occurrences(str : String) : Set<Int> = str.toSet().distinct().map { c -> str.count { it == c } }.toSet()
 
 
         fun partA() : Int {
             var occur2 = 0
             var occur3 = 0
             File("day2.txt").forEachLine {
-                val occurs = occurences(it)
+                val occurs = occurrences(it)
                 if (2 in occurs) occur2++
                 if (3 in occurs) occur3++
             }
