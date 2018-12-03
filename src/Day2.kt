@@ -19,10 +19,9 @@ class Day2 {
             return occur2 * occur3
         }
 
+        // qcslyvphgkrmdawljuefotxbh
         fun partB() : String {
             val lines = File("day2.txt").readLines()
-            var bestString = ""
-            var bestSim = 100
             for (line1 in lines) {
                 for (line2 in lines) {
                     var sim = line1.length
@@ -34,13 +33,10 @@ class Day2 {
                             currString += line1[i]
                         }
                     }
-                    if (sim < bestSim) {
-                        bestString = currString
-                        bestSim = sim
-                    }
+                    if (sim == 1) return currString
                 }
             }
-            return bestString
+            return ""
         }
     }
 }
